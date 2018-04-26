@@ -8,27 +8,27 @@ cordova plugin add cordova-plugin-file
 cordova plugin add cordova-plugin-file-transfer
 ```
 
-## ¸½
-cordova file²å¼ş Ìá¹©ÁËÒ»Ğ©³£Á¿£¬Ö±½ÓÖ¸Ïò¿ÉÓÃµÄÒ»Ğ©Â·¾¶£¬ÏêÏ¸Çë¿´£º
+## é™„
+cordova fileæ’ä»¶ æä¾›äº†ä¸€äº›å¸¸é‡ï¼Œç›´æ¥æŒ‡å‘å¯ç”¨çš„ä¸€äº›è·¯å¾„ï¼Œè¯¦ç»†è¯·çœ‹ï¼š
 https://github.com/apache/cordova-plugin-file#where-to-store-files
 
 
-cordova ³£Á¿£ºcordova.file.dataDirectory
-ÔÚ ios ÖĞ±íÊ¾¸ÃÂ·¾¶£ºfile:///var/mobile/Applications/<UUID>/Library/NoCloud/
-ÔÚ android ÖĞ±íÊ¾¸ÃÂ·¾¶£ºfile:///data/data/<°üÃû>/files/ »òÕß¸ß°æ±¾°²×¿ÊÇ file:///data/user/0/<°üÃû>/files/
-Õâ¸öÂ·¾¶ÊÇÓÀ¾Ã´æ´¢µÄÂ·¾¶£¬ĞèÒªÓ¦ÓÃ×Ô¼ºÌá¹©ÇåÀí´æ´¢¿Õ¼äµÄ¹¦ÄÜ
+- cordova å¸¸é‡ï¼šcordova.file.dataDirectory
+  - åœ¨ ios ä¸­è¡¨ç¤ºè¯¥è·¯å¾„ï¼šfile:///var/mobile/Applications/<UUID>/Library/NoCloud/
+  - åœ¨ android ä¸­è¡¨ç¤ºè¯¥è·¯å¾„ï¼šfile:///data/data/<åŒ…å>/files/ æˆ–è€…é«˜ç‰ˆæœ¬å®‰å“æ˜¯ file:///data/user/0/<åŒ…å>/files/
+è¿™ä¸ªè·¯å¾„æ˜¯æ°¸ä¹…å­˜å‚¨çš„è·¯å¾„ï¼Œéœ€è¦åº”ç”¨è‡ªå·±æä¾›æ¸…ç†å­˜å‚¨ç©ºé—´çš„åŠŸèƒ½
 
 
-cordova ³£Á¿: cordova.file.tempDirectory
-ÔÚ ios ÖĞ±íÊ¾¸ÃÂ·¾¶£ºfile:///var/mobile/Applications/<UUID>/tmp/
-ÔÚ android ÖĞÃ»ÓĞÕâ¸öÂ·¾¶
-Õâ¸öÂ·¾¶ÊÇÁÙÊ±Ä¿Â¼£¬ÀïÃæµÄÎÄ¼ş»á±»ÏµÍ³ËæÊ±ÇåÀí(±ÈÈçÉè±¸´æ´¢ÈİÁ¿²»×ãÊ±)
+- cordova å¸¸é‡: cordova.file.tempDirectory
+  - åœ¨ ios ä¸­è¡¨ç¤ºè¯¥è·¯å¾„ï¼šfile:///var/mobile/Applications/<UUID>/tmp/
+  - åœ¨ android ä¸­æ²¡æœ‰è¿™ä¸ªè·¯å¾„
+è¿™ä¸ªè·¯å¾„æ˜¯ä¸´æ—¶ç›®å½•ï¼Œé‡Œé¢çš„æ–‡ä»¶ä¼šè¢«ç³»ç»Ÿéšæ—¶æ¸…ç†(æ¯”å¦‚è®¾å¤‡å­˜å‚¨å®¹é‡ä¸è¶³æ—¶)
 
-ios Ê¹ÓÃ Cordova + WKWebview Ê±£¬Í¼Æ¬±ØĞëÔÚ cordova.file.tempDirectory ÏÂ£¬<img src> ²ÅÄÜÕ¹Ê¾³öÀ´
+ios ä½¿ç”¨ Cordova + WKWebview æ—¶ï¼Œå›¾ç‰‡å¿…é¡»åœ¨ cordova.file.tempDirectory ä¸‹ï¼Œ<img src> æ‰èƒ½å±•ç¤ºå‡ºæ¥
 
 
-×ÛÉÏ£¬ËùÓĞµÄÍ¼Æ¬ºÍÎÄ¼ş£¬±¾µØ¶¼´æ·ÅÔÚ cordova.file.dataDirectory ÏÂ¡££¨images¡¢files¡¢avatars¡¢thumbnails ¿ÉÒÔÔÙ¾ßÌå·ÖÄ¿Â¼£©
-¶ÔÓÚ ios£¬ÔÚÏÔÊ¾Í¼Æ¬ <img src> µÄÊ±ºò£¬ĞèÒª
-1¡¢ÏÈ¼ì²é cordova.file.tempDirectory Ä¿Â¼ÏÂÓĞÃ»ÓĞ¸ÃÍ¼Æ¬ÎÄ¼ş£¬ÓĞ¾Í¸³Öµ¸ø src£¬Ã»ÓĞ¾Í×ª2
-2¡¢¼ì²é cordova.file.dataDirectory ÏÂÓĞÃ»ÓĞ¸ÃÍ¼Æ¬ÎÄ¼ş£¬ÓĞ¾Í¸´ÖÆµ½ cordova.file.tempDirectory£¬ È»ºó°Ñ tmp Â·¾¶¸³Öµ¸ø src£¬Ã»ÓĞ¾Í×ª3
-3¡¢´Ó·şÎñÆ÷ÏÂÔØÎÄ¼şµ½ cordova.file.dataDirectory£¬È»ºó¸´ÖÆÒ»·İµ½ cordova.file.tempDirectory£¬ ×îºó°Ñ tmp Â·¾¶¸³Öµ¸ø src
+ç»¼ä¸Šï¼Œæ‰€æœ‰çš„å›¾ç‰‡å’Œæ–‡ä»¶ï¼Œæœ¬åœ°éƒ½å­˜æ”¾åœ¨ cordova.file.dataDirectory ä¸‹ã€‚ï¼ˆimagesã€filesã€avatarsã€thumbnails å¯ä»¥å†å…·ä½“åˆ†ç›®å½•ï¼‰
+å¯¹äº iosï¼Œåœ¨æ˜¾ç¤ºå›¾ç‰‡ <img src> çš„æ—¶å€™ï¼Œéœ€è¦
+- 1ã€å…ˆæ£€æŸ¥ cordova.file.tempDirectory ç›®å½•ä¸‹æœ‰æ²¡æœ‰è¯¥å›¾ç‰‡æ–‡ä»¶ï¼Œæœ‰å°±èµ‹å€¼ç»™ srcï¼Œæ²¡æœ‰å°±è½¬2
+- 2ã€æ£€æŸ¥ cordova.file.dataDirectory ä¸‹æœ‰æ²¡æœ‰è¯¥å›¾ç‰‡æ–‡ä»¶ï¼Œæœ‰å°±å¤åˆ¶åˆ° cordova.file.tempDirectoryï¼Œ ç„¶åæŠŠ tmp è·¯å¾„èµ‹å€¼ç»™ srcï¼Œæ²¡æœ‰å°±è½¬3
+- 3ã€ä»æœåŠ¡å™¨ä¸‹è½½æ–‡ä»¶åˆ° cordova.file.dataDirectoryï¼Œç„¶åå¤åˆ¶ä¸€ä»½åˆ° cordova.file.tempDirectoryï¼Œ æœ€åæŠŠ tmp è·¯å¾„èµ‹å€¼ç»™ src
