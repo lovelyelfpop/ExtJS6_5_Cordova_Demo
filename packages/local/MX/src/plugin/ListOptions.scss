@@ -1,0 +1,44 @@
+.item-options 
+{
+    display: inline-block;
+    position: relative;
+    left: 100%;
+        
+	.option-button
+	{
+		color: #fff;
+		position: relative;
+		padding: 0 12px;
+		min-width: 52px;
+		text-overflow: ellipsis;
+		line-height: 42px;
+		cursor: pointer;
+	    
+		height: 100%;
+		display: -webkit-inline-box;
+		display: inline-flex;
+		
+        -webkit-box-align: center;
+        align-items: center;
+	    
+		&.pressed
+		{
+			background-image: linear-gradient( rgba(0, 0, 0, .5), rgba(0, 0, 0, .5) );
+		}
+	}
+}
+
+
+.x-list-options-plugin 
+{
+	.x-list-item
+	{
+		z-index: 1;
+	}
+	
+	.item-options-wrapper
+	{
+		position: absolute;
+		width: 100%;
+	}
+}

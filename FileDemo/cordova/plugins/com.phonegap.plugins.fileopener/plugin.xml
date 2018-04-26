@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+	xmlns:android="http://schemas.android.com/apk/res/android" id="com.phonegap.plugins.fileopener"
+	version="1.0.11">
+
+	<name>File Opener2</name>
+	<description>A File Opener Plugin for Cordova.</description>
+	<license>MIT</license>
+
+	<engines>
+		<engine name="cordova" version=">=3.0.0" />
+	</engines>
+
+	<js-module src="www/fileopener.js" name="FileOpener">
+		<clobbers target="plugins.fileOpener" />
+	</js-module>
+
+	<!-- Android -->
+	<platform name="android">
+		<source-file src="src/android/FileOpener.java" target-dir="src/com/phonegap/plugins/fileopener" />
+        <source-file src="src/android/FileProvider.java" target-dir="src/com/phonegap/plugins/fileopener" />
+        <source-file src="src/android/res/xml/opener_paths.xml" target-dir="res/xml"/>
+        <framework src="com.android.support:support-v4:+" value="gradle" />
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+        </config-file>
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="FileOpener">
+				<param name="android-package" value="com.phonegap.plugins.fileopener.FileOpener" />
+			</feature>
+		</config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+          <provider
+            android:name="com.phonegap.plugins.fileopener.FileProvider"
+            android:authorities="${applicationId}.opener.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+              android:name="android.support.FILE_PROVIDER_PATHS"
+              android:resource="@xml/opener_paths"/>
+          </provider>
+        </config-file>
+	</platform>
+
+	<!-- iOS -->
+	<platform name="ios">
+		<config-file target="config.xml" parent="/*">
+			<feature name="FileOpener">
+				<param name="ios-package" value="FileOpener" />
+			</feature>
+		</config-file>
+		<source-file src="src/ios/FileOpener.m" />
+		<header-file src="src/ios/FileOpener.h" />
+	</platform>
+
+  <!-- wp8 -->
+  <platform name="wp8">
+    <config-file target="config.xml" parent="/*">
+      <feature name="FileOpener">
+        <param name="wp-package" value="FileOpener"/>
+      </feature>
+    </config-file>
+    <source-file src="src/wp/FileOpener.cs" />
+  </platform>
+
+
+</plugin>

@@ -1,0 +1,62 @@
+{
+  "name": "MX",
+  "namespace": "MX",
+  "format": "1",
+  "version": "1.0.16",
+  "compatVersion": "1.0.0",
+  "creator": "pushsoft",
+  "summary": "自定义组件和类",
+  "detailedDescription": "自定义组件和类，基本与业务无关的通用的组件，如 UEditor",
+  "type": "code",
+  "signatures": [
+    {
+      "name": "pushsoft",
+      "uuid": "733bbe2a-58e2-42e4-88ab-76688fdd3bff",
+      "created": "2018-01-22T02:13:30Z",
+      "algorithm": "SHA1withRSA",
+      "nonce": "vA/PSjp+KhU\u003d",
+      "signature": "N7aN9M9Ib3ZpzJsVjTxk2U7TKgyRNZ7FByQki22e+q02T0+hpPgf/oq6mHOOMg0aPEB8UVDoTaIFIFxhPIcPf1vg3Chs8bvmheS6AnObK1p5W8T3GHbGQp48j0wI4J0YRVETTzej8XHUvcMvjJvWy5pnyVhUKH1vmN1SxzHg45HcrcD0B2sZfd6gWOuSg1aWSqnPC8N4keqD8kBdpq/avcenMc0nIMQzU4iTEB1zRTXNIupoQMVtPYiKv04DksK73/xiYe81jEzWHg9T/XbzlDmay4w2fhFopiBAx2guKXatY0rWlMmdTyd+BD9pDcs/RVptu8g+jds5GKh3DmA47g\u003d\u003d"
+    }
+  ],
+  "slicer": {
+    "js": [
+      {
+        "path": "${package.dir}/sass/example/custom.js",
+        "isWidgetManifest": true
+      }
+    ]
+  },
+  "builds": {
+    "default": {
+      "theme": "theme-modern-default_6_5_2"
+    }
+  },
+  "toolkit": "modern",
+  "output": "${package.dir}/build",
+  "sass": {
+    "namespace": "MX",
+    "etc": [
+      "${package.dir}/sass/etc/all.scss"
+    ],
+    "var": [
+      "${package.dir}/sass/var/all.scss",
+      "${package.dir}/sass/var"
+    ],
+    "src": [
+      "${package.dir}/sass/src/all.scss",
+      "${package.dir}/sass/src"
+    ]
+  },
+  "classpath": [
+    "${package.dir}/src"
+  ],
+  "overrides": [
+    "${package.dir}/overrides"
+  ],
+  "example": {
+    "path": [
+      "${package.dir}/examples"
+    ]
+  },
+  "framework": "ext"
+}

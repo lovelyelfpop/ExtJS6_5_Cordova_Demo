@@ -1,0 +1,4 @@
+cordova/platforms/*
+cordova/www/*
+cordova/plugins/android.json
+cordova/plugins/ios.json

@@ -1,0 +1,39 @@
+{
+  "_from": "cordova-android-support-gradle-release",
+  "_id": "cordova-android-support-gradle-release@1.2.0",
+  "_inBundle": false,
+  "_integrity": "sha1-DHvAq5IHuJdC3YXkgQ4Ie2FCYTU=",
+  "_location": "/cordova-android-support-gradle-release",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-android-support-gradle-release",
+    "name": "cordova-android-support-gradle-release",
+    "escapedName": "cordova-android-support-gradle-release",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "http://registry.npm.taobao.org/cordova-android-support-gradle-release/download/cordova-android-support-gradle-release-1.2.0.tgz",
+  "_shasum": "0c7bc0ab9207b89742dd85e4810e087b61426135",
+  "_spec": "cordova-android-support-gradle-release",
+  "_where": "D:\\GitLab\\aio5app_8\\cordova",
+  "author": {
+    "name": "Dave Alden"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "xml2js": "~0.4.19"
+  },
+  "deprecated": false,
+  "description": "Cordova/Phonegap plugin to align various versions of the Android Support libraries specified by other plugins to a specific version",
+  "devDependencies": {},
+  "license": "MIT",
+  "name": "cordova-android-support-gradle-release",
+  "version": "1.2.0"
+}
