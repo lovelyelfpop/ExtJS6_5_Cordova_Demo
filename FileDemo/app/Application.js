@@ -21,9 +21,11 @@ Ext.define('FileDemo.Application', {
     },
 
     launch() {
-        if (Ext.browser.is.Cordova && Ext.os.is.Android) {
+        // android 模拟ios WKwebview 的情况
+        // android 没有 cordova.file.tempDirectory，此处用 cordova.file.cacheDirectory 模拟
+        /*if (Ext.browser.is.Cordova && Ext.os.is.Android) {
             cordova.file.tempDirectory = cordova.file.cacheDirectory;
-        }
+        }*/
         Ext.fly('appLoadingIndicator').destroy();
     },
 
