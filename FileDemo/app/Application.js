@@ -135,7 +135,7 @@ Ext.define('FileDemo.Application', {
             //user = User.getUser(),
             isDebug = Utils.isDebug();
         var result = {
-            '_appid': me.getAppId(),
+            '_appid': 'FileDemo',
             '_os': Ext.os.name, //系统类型
             '_version': me.versionCode || 0, //app版本
             '_cordova': isCdv, //是否cordova
