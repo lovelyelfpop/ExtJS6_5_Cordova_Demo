@@ -31,6 +31,17 @@
     "is_top_level": true,
     "variables": {}
   },
+  "android-theme-appcompat": {
+    "source": {
+      "type": "registry",
+      "id": "android-theme-appcompat"
+    },
+    "is_top_level": true,
+    "variables": {
+      "ACTION_MODE_BGCOLOR": "#2196f3",
+      "PRIMARY_COLOR": "#2196f3"
+    }
+  },
   "cordova-android-support-gradle-release": {
     "source": {
       "type": "registry",

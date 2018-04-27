@@ -13,6 +13,10 @@ Ext.define('FileDemo.view.download.View', {
     scrollable: true,
 
     items: [{
+        xtype: 'navbar',
+        backBtn: false,
+        title: '下载'
+    }, {
         xtype: 'container',
         layout: 'hbox',
         defaultType: 'button',

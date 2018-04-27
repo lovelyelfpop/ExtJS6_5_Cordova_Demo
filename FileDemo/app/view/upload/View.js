@@ -17,6 +17,10 @@ Ext.define('FileDemo.view.upload.View', {
     scrollable: true,
 
     items: [{
+        xtype: 'navbar',
+        backBtn: false,
+        title: '上传'
+    }, {
         xtype: 'mx_imgup',
         reference: 'img',
         uploadConfig: {

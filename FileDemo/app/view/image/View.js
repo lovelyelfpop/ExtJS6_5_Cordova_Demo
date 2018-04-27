@@ -17,6 +17,10 @@ Ext.define('FileDemo.view.image.View', {
     },
 
     items: [{
+        xtype: 'navbar',
+        backBtn: false,
+        title: '图片'
+    }, {
         xtype: 'component',
         html: '必应每日壁纸'
     }, {

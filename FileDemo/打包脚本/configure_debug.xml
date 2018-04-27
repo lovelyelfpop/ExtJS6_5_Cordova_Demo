@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ConfigureDebug">
+  <replaceregexp file="../.sencha/app/production.properties"
+		match="enable.resource.compression=true"
+		replace="enable.resource.compression=false"
+		byline="true"
+		encoding="UTF-8"
+	/>
+  <replaceregexp file="../.sencha/app/cordova-impl.xml"
+		match=" --release"
+		replace=""
+		byline="true"
+		encoding="UTF-8"
+	/>
+  <replaceregexp file="../app.json"
+		match="&quot;type&quot;: &quot;(cmd|closure)&quot;"
+		replace="&quot;type&quot;: &quot;none&quot;"
+		byline="true"
+		encoding="UTF-8"
+	/>
+</project>

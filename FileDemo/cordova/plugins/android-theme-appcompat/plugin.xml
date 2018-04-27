@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="android-theme-appcompat" version="0.0.1">
+    <name>android-theme-appcompat</name>
+    <description></description>
+    <author>Doctor.Who.</author>
+    <license>MIT</license>
+    <keywords></keywords>
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+    <!-- android -->
+    <platform name="android">
+        <preference name="ACTION_MODE_BGCOLOR" />
+        <preference name="PRIMARY_COLOR" />
+
+        <framework src="com.android.support:appcompat-v7:23.+" value="gradle" />
+
+        <resource-file src="android/res/values/styles.xml" target="res/values/styles.xml" />
+        <resource-file src="android/res/values-v21/styles.xml" target="res/values-v21/styles.xml" />
+        <resource-file src="android/res/values/colors.xml" target="res/values/colors.xml" />
+
+        <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="application/activity[@android:name='MainActivity']">
+            <activity android:theme="@style/AppTheme" />
+        </edit-config>
+
+        <config-file target="app/src/main/res/values/colors.xml" parent="/resources">
+            <color name="color_action_mode_bg">$ACTION_MODE_BGCOLOR</color>
+            <color name="primary">$PRIMARY_COLOR</color>
+        </config-file>
+    </platform>
+</plugin>

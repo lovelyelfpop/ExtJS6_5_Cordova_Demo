@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ReplaceAppVersion">
+  <property file="../resources/appversion.txt"/>
+	<replaceregexp file="../cordova/config.xml"
+		match="version=&quot;\d+\.[\d\.]+&quot;"
+		replace="version=&quot;${version.name}&quot;"
+		byline="false"
+		flags="g"
+		encoding="UTF-8"
+	/>
+	<replaceregexp file="../cordova/config.xml"
+		match="android-versionCode=&quot;\d+&quot;"
+		replace="android-versionCode=&quot;${version.code}&quot;"
+		byline="false"
+		flags="g"
+		encoding="UTF-8"
+	/>
+	<replaceregexp file="../cordova/config.xml"
+		match="ios-CFBundleVersion=&quot;\d+&quot;"
+		replace="ios-CFBundleVersion=&quot;${version.code}&quot;"
+		byline="false"
+		flags="g"
+		encoding="UTF-8"
+	/>
+</project>

@@ -1346,5 +1346,24 @@ Ext.define('MX.util.Utils', {
             }
         } else if (parent) parent.appendChild(fileInput);
         document.body.removeChild(form);
-    }
+    },
+
+    /**
+     * 生成一个uuid，99.99%不重复
+     * @return {String} uuid
+     */
+    uuid: (function () {
+        var counter = 0;
+
+        return function (prefix) {
+            var guid = new Date().getTime().toString(32),
+                i;
+
+            for (i = 0; i < 5; i++) {
+                guid += Math.floor(Math.random() * 65535).toString(32);
+            }
+
+            return (prefix || '') + guid + (counter++).toString(32);
+        };
+    }())
 });

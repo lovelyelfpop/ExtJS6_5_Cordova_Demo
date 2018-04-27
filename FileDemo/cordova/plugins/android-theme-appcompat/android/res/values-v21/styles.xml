@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="actionModeBackground">@color/color_action_mode_bg</item>
+        <item name="android:actionModeBackground">@color/color_action_mode_bg</item>
+        <!-- <item name="windowActionModeOverlay">true</item>
+        <item name="android:windowActionModeOverlay">true</item> -->
+        <!-- Main theme colors -->
+        <!--   your app branding color for the app bar -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="android:colorPrimary">@color/primary</item>
+        <!--   darker variant for the status bar and contextual app bars -->
+        <item name="colorPrimaryDark">@color/primary</item>
+        <item name="android:colorPrimaryDark">@color/primary</item>
+        <!--   theme UI controls like checkboxes and text fields -->
+        <item name="colorAccent">@color/primary</item>
+        <item name="android:colorAccent">@color/primary</item>
+    </style>
+</resources>

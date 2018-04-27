@@ -14,6 +14,13 @@ Ext.define('FileDemo.fileexplorer.List', {
 
     cls: 'file-explorer',
     loadingText: null,
+
+    items: [{
+        xtype: 'navbar',
+        backBtn: false,
+        title: '文件浏览'
+    }],
+
     itemContentCls: 'x-layout-box fullwidth x-align-center',
     itemTpl: [
         '<div class="list-icon {[values.isParent ? \'x-fa fa-level-up\' : (values.isDirectory ? \'x-fa fa-folder\' : (values.isFile ? FileUtil.getMIMEIcon(FileUtil.getExtension(values.name)) : \'\'))]}"></div>',
@@ -112,7 +119,7 @@ Ext.define('FileDemo.fileexplorer.List', {
         var me = this;
         me.callParent(arguments);
 
-        if (Ext.browser.is.Cordova) {
+        if (Ext.browser.is.Cordova || window.cefMain) {
             FSUtil.load1().then(fs => {
                 me.successDir(fs.root, false, null);
             }).catch(err1 => {

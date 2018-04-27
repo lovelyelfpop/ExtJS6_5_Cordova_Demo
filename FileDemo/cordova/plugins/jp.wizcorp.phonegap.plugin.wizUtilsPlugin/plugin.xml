@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="jp.wizcorp.phonegap.plugin.wizUtilsPlugin"
+    version="1.0.1">
+
+    <name>Wizard Utils Plugin</name>
+    
+    <description>This plugin allows you to access various app and device information, as well as copy/paste and restart app utilities.</description>
+    
+    <author>Ally Ogilvie - aogilvie@wizcorp.jp</author>
+    
+    <keywords>copy, paste, wizcorp, wizard, utilities</keywords>
+	
+	<engines>
+	    <engine name="cordova" version=">=3.0.0" />
+	</engines>
+
+    <license>MIT</license>
+
+    <js-module src="www/wizUtils.js" name="wizUtilsPlugin">
+        <clobbers target="plugins.wizUtils" />
+    </js-module>
+    
+    <!-- ios -->
+    <platform name="ios">
+
+        <config-file target="config.xml" parent="/*">
+		    <feature name="WizUtilsPlugin">
+		        <param name="ios-package" value="WizUtilsPlugin" />
+		        <param name="onload" value="true" />
+		    </feature>
+        </config-file>
+               
+        <!-- Plugin files -->
+        <header-file src="src/ios/WizUtilsPlugin.h" />
+        <source-file src="src/ios/WizUtilsPlugin.m" compiler-flags="-fno-objc-arc" />
+        	
+        <!-- Logger -->
+        <source-file src="src/ios/WizDebugLog.h" compiler-flags="-fno-objc-arc" />
+
+    </platform>
+    
+    <!-- android -->
+    <platform name="android">
+    
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="WizUtilsPlugin" >
+				<param name="android-package" value="jp.wizcorp.phonegap.plugin.wizUtilsPlugin.WizUtilsPlugin"/>
+			</feature>
+	    </config-file>
+	
+	    <source-file src="src/android/WizUtilsPlugin.java" 
+	            target-dir="src/jp/wizcorp/phonegap/plugin/wizUtilsPlugin"/>
+
+    </platform>
+    
+    <license>MIT</license>
+
+</plugin>

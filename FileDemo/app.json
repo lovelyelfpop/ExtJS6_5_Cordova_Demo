@@ -302,7 +302,7 @@
             "enable": true
         },
         "compressor": {
-            "type": "none" //yui
+            "type": "none" //none��closure��cmd
         }
     },
 
@@ -405,10 +405,10 @@
         "base": "${workspace.build.dir}/${build.environment}/${app.name}",
         "appCache": {
             "enable": false
-        },
+        }/*,
         "js": {
             "optimize": false
-        }
+        }*/
     },
 
     /**

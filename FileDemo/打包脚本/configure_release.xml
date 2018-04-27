@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ConfigureDebug">
+  <replaceregexp file="../.sencha/app/production.properties"
+		match="enable.resource.compression=false"
+		replace="enable.resource.compression=true"
+		byline="true"
+		encoding="UTF-8"
+	/>
+  <replaceregexp file="../.sencha/app/cordova-impl.xml"
+		match=" --release"
+		replace=""
+		byline="true"
+		encoding="UTF-8"
+	/>
+  <replaceregexp file="../.sencha/app/cordova-impl.xml"
+		match="cordova \$\{cordova.cli.options\} build \$\{cordova.platforms.clean\}"
+		replace="cordova &#36;\{cordova.cli.options\} build &#36;\{cordova.platforms.clean\} --release"
+		byline="true"
+		encoding="UTF-8"
+	/>
+  <replaceregexp file="../app.json"
+		match="&quot;type&quot;: &quot;(cmd|closure|none)&quot;"
+		replace="&quot;type&quot;: &quot;cmd&quot;"
+		byline="true"
+		encoding="UTF-8"
+	/>
+</project>

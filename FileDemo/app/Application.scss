@@ -5,7 +5,25 @@
 $enable-font-awesome: dynamic(true);
 $enable-big: dynamic(false);
 
+/* iPhoneX 刘海下巴屏*/
+.actionmode .topinset 
+{ 
+	padding-top: 0 !important; 
+}
+.bottominset {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+}
 
+@if $modern-theme-material {
+    .x-tabbar .x-active-indicator-el {
+        bottom: constant(safe-area-inset-bottom);
+        bottom: env(safe-area-inset-bottom);
+    }
+}
+
+
+/*图片*/
 .imgBlock, .imgCt {
     background-color: #f2f2f2;
     position: relative;
@@ -52,6 +70,7 @@ $enable-big: dynamic(false);
     width: 100%;
 }
 
+/*颜色*/
 $soft-blue: dynamic(#1DB9F2);
 $soft-red: dynamic(#F56D5E);
 .bg-soft-blue{

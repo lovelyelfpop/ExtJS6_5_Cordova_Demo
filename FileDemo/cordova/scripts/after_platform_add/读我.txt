@@ -1,0 +1,13 @@
+此Hook的入口文件是copy_release_properties.js
+执行时间是在cordova platform add android 和 cordova build android之间
+
+因为cordova 5.x采用gradle打包android项目，所以
+做了下列操作：
+1、拷贝build-extras.gradle到android项目(cordova/paltforms/android)
+此文件 防止在发布的时候出现因MissingTranslation导致Build Failed!
+
+2、拷贝release-signing.properties到android项目(cordova/paltforms/android)
+此文件配置了 android生成release版本的apk所需要的android数字证书，包括证书路径和密码
+如何生成安卓数字证书请看：http://blog.csdn.net/lovelyelfpop/article/details/43760349
+
+3、另外，安卓4.4+透明状态栏，需要修改2个java文件，增加1个java文件

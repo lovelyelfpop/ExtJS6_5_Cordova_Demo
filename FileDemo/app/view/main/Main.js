@@ -23,6 +23,10 @@ Ext.define('FileDemo.view.main.Main', {
 
     tabBarPosition: 'bottom',
 
+    tabBar: {
+        userCls: 'bottominset'
+    },
+
     items: [{
         xtype: 'images_view',
         title: '图片',
