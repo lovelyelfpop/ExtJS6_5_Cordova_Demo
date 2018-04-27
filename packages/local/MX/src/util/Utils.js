@@ -38,6 +38,27 @@ Ext.define('MX.util.Utils', {
     isWeb: location.href.indexOf('http') == 0,
 
     /**
+     * 是否 debug 打包(sencha app build development/cordova build)
+     */
+    isDebugBuild() {
+        return this.isDev || window.BuildInfo && BuildInfo.debug;
+    },
+
+    /**
+     * 是否手动开启 debug 模式（比如：点击 7 次版本号）
+     */
+    isDebugOpened() {
+        return !!parseInt(this.getLsItem('debug') || 0, 10);
+    },
+
+    /**
+     * 是否 debug 模式，控制服务端输出日志
+     */
+    isDebug() {
+        return this.isDebugBuild() || this.isDebugOpened();
+    },
+
+    /**
      * 获取应用程序的实例
      * @return {Ext.app.Application}
      */
