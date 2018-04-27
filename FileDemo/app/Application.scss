@@ -16,9 +16,14 @@ $enable-big: dynamic(false);
 }
 
 @if $modern-theme-material {
-    .x-tabbar .x-active-indicator-el {
-        bottom: constant(safe-area-inset-bottom);
-        bottom: env(safe-area-inset-bottom);
+    .x-tabbar {
+        .x-active-indicator-el {
+            bottom: constant(safe-area-inset-bottom);
+            bottom: env(safe-area-inset-bottom);
+        }
+        .x-tab .x-active-indicator-el {
+            bottom: 0;
+        }
     }
 }
 

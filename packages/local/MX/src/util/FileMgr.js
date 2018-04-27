@@ -148,15 +148,15 @@ Ext.define('MX.util.FileMgr', {
                 if (!queue) {
                     queue = me[queueName][key] = [];
 
-                    var success = entry => {
+                    var success = fileURL => {
                         // <debug>
-                        console.log('file download succeed', entry);
+                        console.log('file download succeed', fileURL);
                         // </debug>
                         var q = me[queueName][key];
                         if (q) {
                             while (q.length) {
                                 var obj = q.shift();
-                                if (obj.resolve) obj.resolve(entry.toURL());
+                                if (obj.resolve) obj.resolve(fileURL);
                             }
                             delete me[queueName][key];
                         }
@@ -192,8 +192,8 @@ Ext.define('MX.util.FileMgr', {
                                 }
                             }).then(filePath => {
                                 return me.copyTo(o.root, filePath, 0, o.relative) // 拷贝一份到 tmp 目录
-                                    .then(tmpFilePath => {
-                                        success(tmpFilePath);
+                                    .then(tmpFileURL => {
+                                        success(tmpFileURL);
                                     });
                             })
                             .catch(fail);
@@ -208,15 +208,17 @@ Ext.define('MX.util.FileMgr', {
                                 var fileURL = fileEntry.toURL();
                                 success(fileURL);
 
-                                return me.exists(1, o.relative)
+                                me.exists(1, o.relative)
                                     .then(exists => {
                                         if (!exists) { // 如果 dataDirectory 下没有这个文件，就将其拷贝到 dataDirectory 下
                                             return me.copyTo(0, fileURL, o.root, o.relative); // 拷贝一份到 dataDirectory 目录
                                         }
                                     });
                             }
-                            // 没有就下载
-                            downAndCopy();
+                            else {
+                                // 没有就下载
+                                downAndCopy();
+                            }
                         }).catch(fail);
                     }
                 }

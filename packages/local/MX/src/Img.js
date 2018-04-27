@@ -51,7 +51,7 @@ Ext.define('MX.Img', {
             me.desc.setHtml('加载中');
             if (Ext.browser.is.Cordova && me.canDownload(src)) {
                 var picName = FileUtil.getFileName(src);
-                FileMgr.downFile(src, null, Utils.joinPath(me.saveDir, picName))
+                FileMgr.downFileForSrc(src, null, Utils.joinPath(me.saveDir, picName))
                     .then(path => {
                         if (me.getValue() === src) { // 因为是异步过程，me.getValue()可能有变化
                             me.setSrc(path);
