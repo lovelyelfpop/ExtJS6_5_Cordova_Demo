@@ -5,8 +5,16 @@
             "packager": "cordova",
             "cordova" : {
                 "config": {
-                    // Uncomment the line below and add the platforms you wish to build for
                     "platforms": "android",
+                    "id": "com.pushsoft.filedemo"
+                }
+            }
+        },
+        "ios": {
+            "packager": "cordova",
+            "cordova" : {
+                "config": {
+                    "platforms": "ios",
                     "id": "com.pushsoft.filedemo"
                 }
             }
