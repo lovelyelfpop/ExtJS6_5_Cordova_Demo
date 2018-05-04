@@ -54,7 +54,8 @@ Ext.define('MX.util.FileSystemUtil', {
         9: 'INVALID_MODIFICATION_ERR',
         10: 'QUOTA_EXCEEDED_ERR',
         11: 'TYPE_MISMATCH_ERR',
-        12: 'PATH_EXISTS_ERR'
+        12: 'PATH_EXISTS_ERR',
+        1000: 'UNKNOWN_ERR'
     },
 
     privates: {
@@ -80,8 +81,8 @@ Ext.define('MX.util.FileSystemUtil', {
              * 也就是说 resolveLocalFileSystemURL 的 参数一般都是 encode 过的 url, 不 encode 一般也可以
              * dirEntry.getFile 的参数应该是相对路径，是 decode 过的（或者说是真实的目录和文件名）
              */
-            const tempDir = cordova.file.tempDirectory,
-                dataDir = cordova.file.dataDirectory;
+            const tempDir = window.cordova ? cordova.file.tempDirectory : null,
+                dataDir = (window.cordova || window.cefMain).file.dataDirectory;
             if (FileUtil.isFileUri(path)) {
                 full = path;
                 if (tempDir && path.indexOf(tempDir) == 0) {
@@ -225,7 +226,7 @@ Ext.define('MX.util.FileSystemUtil', {
             }
 
             window.resolveLocalFileSystemURL(
-                cordova.file.dataDirectory, // 这里我们用 持久化存储目录
+                (window.cordova || window.cefMain).file.dataDirectory, // 这里我们用 持久化存储目录
                 entry => {
                     me.fileSystem = entry.filesystem;
                     resolve(me.fileSystem);

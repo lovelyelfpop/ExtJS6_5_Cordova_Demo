@@ -7,7 +7,7 @@ Ext.define('FileDemo.view.download.ViewController', {
     },
 
     onTapDown(btn) {
-        if (!Ext.browser.is.Cordova) return;
+        if (!Ext.browser.is.Cordova && !window.cefMain) return;
 
         const me = this,
             url = btn.url;
@@ -31,7 +31,7 @@ Ext.define('FileDemo.view.download.ViewController', {
     },
 
     onTapOpen(btn) {
-        if (!Ext.browser.is.Cordova) return;
+        if (!Ext.browser.is.Cordova && !window.cefMain) return;
 
         const me = this,
             name = btn.name,
@@ -49,7 +49,7 @@ Ext.define('FileDemo.view.download.ViewController', {
     },
 
     onTapDownload(btn) {
-        if (!Ext.browser.is.Cordova) return;
+        if (!Ext.browser.is.Cordova && !window.cefMain) return;
 
         const me = this,
             txtUrl = me.lookup('txtUrl'),

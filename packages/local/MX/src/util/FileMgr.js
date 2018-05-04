@@ -214,8 +214,7 @@ Ext.define('MX.util.FileMgr', {
                                             return me.copyTo(0, fileURL, o.root, o.relative); // 拷贝一份到 dataDirectory 目录
                                         }
                                     });
-                            }
-                            else {
+                            } else {
                                 // 没有就下载
                                 downAndCopy();
                             }
@@ -387,16 +386,27 @@ Ext.define('MX.util.FileMgr', {
      * @param {String/FileEntry} file 文件Entry 或者 fileUri
      */
     open(file) {
-        if (window.plugins && plugins.fileOpener) {
+        const me = this;
+
+        return new Ext.Promise((resolve, reject) => {
             let url = file;
-            if(window.FileEntry && file instanceof window.FileEntry) {
+            if (window.FileEntry && file instanceof window.FileEntry) {
                 url = file.toURL();
             }
             url = decodeURIComponent(url);
-            plugins.fileOpener.open(url, null, err => {
-                Utils.toastShort(err.message || '');
-            });
-        }
+
+            if (window.plugins && plugins.fileOpener) {
+                plugins.fileOpener.open(url, resolve, err => {
+                    reject(err);
+                    Utils.toastShort(err.message || '');
+                });
+            } else if (window.cefMain) {
+                cefMain.open(url, resolve, err => {
+                    reject(err);
+                    Utils.toastShort(err.message || '');
+                });
+            }
+        });
     },
 
     privates: {

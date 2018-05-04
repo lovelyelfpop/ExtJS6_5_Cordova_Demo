@@ -150,7 +150,7 @@ Ext.define('FileDemo.fileexplorer.List', {
                     DirMgr.moveTo(null, entryURL, null, parentDirURL + text).then(url => {
                         record.set('name', text);
                     }).catch(err => {
-                        Utils.alert(err);
+                        Utils.alert(err.code ? FSUtil.FILEERROR[err.code] || `未知错误${err.code}` : err);
                     });
                 } else if (isFile) {
                     /* me.currentDir.getFile(name, {
@@ -163,7 +163,7 @@ Ext.define('FileDemo.fileexplorer.List', {
                     FileMgr.moveTo(null, entryURL, null, parentDirURL + text).then(url => {
                         record.set('name', text);
                     }).catch(err => {
-                        Utils.alert(err);
+                        Utils.alert(err.code ? FSUtil.FILEERROR[err.code] || `未知错误${err.code}` : err);
                     });
                 }
             });
@@ -180,7 +180,7 @@ Ext.define('FileDemo.fileexplorer.List', {
                     FileMgr.remove(null, entryURL).then(() => {
                         store.remove(record);
                     }).catch(err => {
-                        Utils.alert(err);
+                        Utils.alert(err.code ? FSUtil.FILEERROR[err.code] || `未知错误${err.code}` : err);
                     });
                 }
             });

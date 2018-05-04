@@ -138,7 +138,7 @@ Ext.define('FileDemo.util.ImgMgr', {
         node.removeAttribute('onload');
         me._setNodeTipText(node, '加载中');
 
-        if (Ext.browser.is.Cordova) {
+        if (Ext.browser.is.Cordova || window.cefMain) {
             var nodeId = Ext.id(node, me.prefix);
 
             FileMgr.downFileForSrc(url, 1, saveDir + picName, {

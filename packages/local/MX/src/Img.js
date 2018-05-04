@@ -49,7 +49,7 @@ Ext.define('MX.Img', {
             me.removeCls('has-img');
         } else {
             me.desc.setHtml('加载中');
-            if (Ext.browser.is.Cordova && me.canDownload(src)) {
+            if ((Ext.browser.is.Cordova || window.cefMain) && me.canDownload(src)) {
                 var picName = FileUtil.getFileName(src);
                 FileMgr.downFileForSrc(src, null, Utils.joinPath(me.saveDir, picName))
                     .then(path => {
